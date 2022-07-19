@@ -1,4 +1,8 @@
-const http = require('http')
+const http = require('http');
+const dotenv = require("dotenv");
+dotenv.config()
+const port = process.env.DEFAULT_SERVER_PORT;
+
 const pid = process.pid;
 
 http.createServer((req, res) => {
@@ -6,6 +10,6 @@ http.createServer((req, res) => {
     console.log(`Handling request from ${pid}`);
 
     res.end(`Hello from ${pid}`)
-}).listen(8080, () => {
-    console.log(`Started ${pid}`)
+}).listen(port, () => {
+    console.log(`Started ${pid} listening on http://localhost:${port}`)
 })
