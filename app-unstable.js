@@ -7,3 +7,7 @@ http.createServer(
 ).listen(port, () => {
     console.log(`Started ${pid} listening on http://localhost:${port}`)
 })
+
+setTimeout(() => {
+    throw new Error('Kaboom')
+}, Math.ceil(Math.random() * 3) * 1000)
