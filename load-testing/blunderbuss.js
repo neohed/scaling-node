@@ -6,7 +6,7 @@ const path = '/'
 const hostname = 'localhost'
 
 const concurrentRequests = 10;
-const durationMS = 10 * 1000;
+const durationMS = 10_000;
 
 const getElapsedTime = (function(startTime) {
     return () => Date.now() - startTime
